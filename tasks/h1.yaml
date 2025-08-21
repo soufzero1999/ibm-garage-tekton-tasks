@@ -1,0 +1,18 @@
+# tasks/info-task.yaml
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: system-info-demo
+spec:
+  steps:
+    - name: show-system-info
+      image: ubuntu
+      script: |
+        #!/usr/bin/env bash
+        echo "=== System Info Demonstration ==="
+        echo "Current directory: $(pwd)"
+        echo "Current user: $(whoami)"
+        echo "Current date: $(date)"
+        echo "Hostname: $(hostname)"
+        echo "================================="
+        # This just demonstrates code execution without accessing secrets

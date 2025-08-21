@@ -1,0 +1,10 @@
+# pipelines/info-pipeline.yaml
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: system-info-pipeline
+spec:
+  tasks:
+    - name: system-info
+      taskRef:
+        name: system-info-demo
